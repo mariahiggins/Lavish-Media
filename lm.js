@@ -4,7 +4,7 @@
   var BX = window.__BX || {};
   function fixBlob(s) {
     return typeof s === 'string' && s.indexOf('/_blob/') !== -1
-      ? s.replace(/\/_blob\/([0-9a-f]{32})(?!\.)/g, function (m, id) { return 'assets/' + id + '.' + (BX[id] || 'jpg'); })
+      ? s.replace(/\/_blob\/([0-9a-f]{32})(?!\.)/g, function (m, id) { return (window.__AP || '') + 'assets/' + id + '.' + (BX[id] || 'jpg'); })
       : s;
   }
 
